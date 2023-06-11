@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>galeria de fotos</h1>
+        <button type="button">Nova Imagem</button>
+    </header>
+    <form action="#">
+        <h2>Inserir nova imagem</h2>
+        <input type="url" id="new-image" required placeholder="URL da imagem">
+        <button type="submit">Adicionar</button>
+        <button type="reset" id="button-cancel">Cancelar</button>   <!  o reset limpa o formulário>
+    </form>
+    <ul>        
+        <li>
+            <img src="./images/foto1.jpg" alt="Imagem de um gato">
+            <div class="overlay-image-link">
+                <a href="./images/foto1.jpg" title="Ver imagem em tamanho real" target="_blank">   <! target e o _blank fazem a imagem abrir em outra aba>
+                    Ver imagem em tamanho real
+                </a> 
+            </div>
+        </li>
+        <li>
+            <img src="./images/foto2.jpg" alt="Imagem de um gato">
+            <div class="overlay-image-link">      <! é o link que leva a imagem pra outro destino ao clicar >
+                <a href="./images/foto1.jpg" title="Ver imagem em tamanho real" target="_blank">   <! target e o _blank fazem a imagem abrir em outra aba>
+                    Ver imagem em tamanho real
+                </a> 
+            </div>
+        </li>
+        <li>
+            <img src="./images/foto3.jpg" alt="Imagem de um gato">
+            <div class="overlay-image-link">     <! essa div com a class é pra manipular e estilizar a caixinha que contém o link na tag a>
+                <a href="./images/foto1.jpg" title="Ver imagem em tamanho real" target="_blank">   <! target e o _blank fazem a imagem abrir em outra aba>
+                    Ver imagem em tamanho real
+                </a> 
+            </div>
+        </li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>  <! adicionaod JQuery ao HTML >
+    <script src="main.js"></script>     <! o arquivo JS precisa estar depois do JQuery, é regra  >
+</body>
+</html>

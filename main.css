@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif; 
+}                                           /*  reset no HMTL inteiro   */
+
+header {
+    background-color: #fff;
+    padding: 26px 0;    /*  o 16px em cima e embaixo e 0 nas laterais  */
+    color: #1f4f91;
+    display: flex;              /* pra deixar o botão do lado do título  */
+    border-bottom: 10px solid #cfcfcf;       /* borda inferior com 14px, sólida e de cor azul escuro  */
+    justify-content: center;            /*  pra centralizar tudo no centro da tela  */
+    text-transform:uppercase;              /*  pra deixar todas as letras maiúsculas  */
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: rgba(54, 54, 54, 0.546);
+    color: #fff;
+    padding: 20px 0;       /*  o 20px em cima e embaixo e 0 nas laterais  */
+    text-align: center;    /*  no form pra centralizar é text-align: center   */
+    display: none;         /* o display none é pra o form sumir, ele vai aparecer com o efeito do JQuery  */
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input,
+button {
+    padding: 8px;
+    border-radius: 2px;
+    border: none;       /*  os botões e os campos sem borda  */
+}
+
+button {
+    background:linear-gradient(#164695ca, #386ec6bb, #0f75ad);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #ffffff54;
+}
+
+#button-cancel {
+    background: linear-gradient(180deg,#9c1d1deb, #db3f5ee8);    
+}
+
+#button-cancel:hover {
+    background-color: #000000ec;
+}
+
+form input:focus-visible {               /* pra mudar a cor da borda ao passar o mouse  */
+    outline: 2px solid rgba(6, 54, 77, 0.256);       /* outline é a borda  */
+}
+
+ul {
+    display: flex;  /* os elementos ficam um do lado do outro */
+    flex-wrap: wrap;  /* quando a linha estiver ocupando toda a tela com conteúdo, uma nova linha abaixo é criada  */
+}
+
+ul li {
+    max-width: 25%;   /* pra ficar 4 fotos numa linha ocupando toda a tela de 100%, cada item do li terá 25%  */
+    list-style: none;  /* retira as bolinhas que são comuns do "li", por ser uma lista de tópicos  */
+    position: relative;   /*  li é o elemento pai da tag <a>, 
+    então a estilização da class .overlay-image-link tem como referência a tag "li" */
+    max-height: 280px;  /*  o li tem uma largura máxima de 280px  */
+    overflow-y: hidden;    /*  overflow-y (y porque o conteúdo que queremos ocultar está na vertical)
+    e o comando hidden oculta todo o conteúdo que exceder o tamanho de 280px na vertical   */
+}
+
+ul li img {
+    width: 100%;    /* a largura imagerm vai ocupar 100% dentro dos 25% que o "li" tem como tamanho máximo  */
+}
+
+.overlay-image-link { 
+    padding: 16px;  
+    background-color: #0000006e;
+    position: absolute;   /*  pro link ficar fixo no canto inferior do "li"  */
+    bottom: 0;    /* o link vai estar na extremidade inferior da tela   , por isso bottom 0  */
+    left: 0;      /* o link vai estar na extremidade da esquerda  */
+    width: 100%;   /*  a largura do background está ocupando toda a extensão da ul pois as 3 class possuem o mesmo nome  */
+    text-align: center;   /*  pra centralziar o texto dentro do li, que é da tag <a>  */
+    opacity: 0;   /*  pra retirar da tela visivelmente, diminuindo a opacidade, vai de 0 a 1 em decimais  */
+    transition: all ease .3s;
+}
+
+.overlay-image-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.overlay-image-link:hover {  /* o hover reconhece a passada de mouse em cima da class,
+    quando isso acontece, o elemento .overlay.image-link (que está dentro da li),
+    passa a ter o opacity: 1 e fica visível ao usuário  */
+    opacity: 1;
+    transition: all ease .5s; /* transition: transição suave e animada ao longo de um período de tempo,
+    all significa que a transição acontecerça em todo o elemento selecionado,
+    ease é o tempo que isso vai acontecer, definido em números após o ease
+    o número sem pontos significa segundos, com o ponto, milesegundos */
+    /* nesse caso, a transição é da opacidade surgir e desaparecer, de forma mais lenta e suave  */
+}
